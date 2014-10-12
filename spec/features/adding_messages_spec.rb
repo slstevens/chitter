@@ -16,4 +16,12 @@ feature "User adds a new message(peep)" do
       click_button 'Peep!'
     end
   end
+
+  scenario "with a few tags" do
+    visit "/"
+    add_message("Hello, World #Greeting #Peace")
+    message = Message.first
+    expect(message.hashtags.map(&:text)).to include("#Greeting")
+    expect(message.hashtags.map(&:text)).to include("#Peace")
+  end
 end
