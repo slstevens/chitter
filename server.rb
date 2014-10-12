@@ -1,6 +1,7 @@
 require 'data_mapper'
 require 'sinatra'
-require 'sinatra/assetpack'
+require 'rack-flash'
+
 require './lib/message'
 require './lib/hashtag'
 require './lib/user'
@@ -13,7 +14,7 @@ DataMapper.auto_upgrade!
 
 enable :sessions
 set :session_secret, 'super secret'
-# use Rack::Flash, :sweep => true
+use Rack::Flash, :sweep => true
 
 
 get '/' do
@@ -35,19 +36,25 @@ get '/hashtags/:text' do
 end
 
 get '/users/new' do
+	@user = User.new
   # note the view is in views/users/new.erb
   # we need the quotes because otherwise
   # ruby would divide the symbol :users by the
   # variable new (which makes no sense)
-  erb :"users/new"
+    erb :"users/new"
 end
 
 post '/users' do
-  	user = User.create(:email => params[:email],
+  	@user = User.create(:email => params[:email],
                        :password => params[:password],
                        :password_confirmation => params[:password_confirmation])
- 	session[:user_id] = user.id
-    redirect to('/')
+	if @user.save
+   		session[:user_id] = @user.id
+    	redirect to('/')
+    else
+    	flash[:notice] = "Sorry, your passwords don't match"
+   		erb :"users/new"
+   	end
 end
 
 # ------------------------------
