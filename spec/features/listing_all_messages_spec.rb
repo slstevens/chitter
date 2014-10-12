@@ -1,5 +1,5 @@
 require './spec/spec_helper'
-require './lib/message'
+require './app/models/message'
 
 feature "User browses the list of messages (peeps)" do
 
