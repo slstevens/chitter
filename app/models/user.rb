@@ -8,8 +8,6 @@ class User
 		property :email, 				String, :unique => true, :message => "This email is already taken"
 		property :password_digest,		Text
 
-	has n, :messages
-	
 	attr_reader :password
 	attr_accessor :password_confirmation
 

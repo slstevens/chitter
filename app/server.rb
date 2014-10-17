@@ -2,6 +2,7 @@ require 'data_mapper'
 require 'sinatra'
 require 'sinatra/partial'
 require 'rack-flash'
+require 'dm-timestamps'
 
 require_relative 'data_mapper_setup'
 require_relative 'helpers/helpers'

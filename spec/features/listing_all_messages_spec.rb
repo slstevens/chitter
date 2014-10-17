@@ -20,6 +20,7 @@ feature "User browses the list of messages (peeps)" do
 	scenario "when opening the home page" do
 		visit '/'
     	expect(page).to have_content("Hello, World #Greeting #Peace")
+    	expect(page).to have_content("17 Oct 14")
     end
 
 

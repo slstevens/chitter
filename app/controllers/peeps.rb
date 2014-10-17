@@ -1,7 +1,7 @@
 post '/messages' do
 	content = params["content"]
 	hashtags = params["content"].scan(/#\w+/).flatten.map{|hashtag| Hashtag.first_or_create(:text => hashtag)}
-	Message.create(:content => content, :hashtags => hashtags, :user_id => current_user.id)
+	Message.create(:content => content, :hashtags => hashtags, :user_id => current_user.id, :created_at => Time.now )
 	redirect to('/')
 
 end

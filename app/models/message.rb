@@ -1,9 +1,12 @@
+require 'dm-timestamps'
+
 class Message
 
   include DataMapper::Resource
 
 	property :id,    		 	Serial
 	property :content,  		String
+	property :created_at, 		DateTime
 
 	has n, :hashtags, :through => Resource
  	belongs_to :user

@@ -1,7 +1,10 @@
 <ul>
 	<% @messages.reverse.each do |message| %>
 		<% string = message.content %>
-		<li><%= string.gsub(/#\w+/) { |tag| link_to("/hashtags/%23#{tag.gsub(/^./, "")}", "#{tag}")} %></li>
+		<li><%= string.gsub(/#\w+/) { |tag| link_to("/hashtags/%23#{tag.gsub(/^./, "")}", "#{tag}")} %>
+		</li>
+		<li><%= message.created_at.strftime("%d %b %y") %></li>
 	<% end %> 
+
 </ul>
 
