@@ -1,13 +1,7 @@
-<div id="new-message">
-  <form action="/messages" method="post">
-    <input type="text" name="content">
-    <input type="submit" value="Peep!">
-  </form>
-</div>
-
 <ul>
-	<% @messages.each do |message| %>
+	<% @messages.reverse.each do |message| %>
 		<% string = message.content %>
-		<li><%= string.gsub!(/#\w+/) { |tag| link_to("hashtags/%23#{tag.gsub(/^./, "")}", "#{tag}") } %></li>
+		<li><%= string.gsub(/#\w+/) { |tag| link_to("/hashtags/%23#{tag.gsub(/^./, "")}", "#{tag}")} %></li>
 	<% end %> 
 </ul>
+

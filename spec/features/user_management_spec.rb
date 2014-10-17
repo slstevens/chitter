@@ -27,6 +27,7 @@ feature "User signs up" do
     expect(page).to have_content("This email is already taken")
   end
 
+
   def sign_up(email = "alice@example.com",
               password = "oranges!",
               password_confirmation = "oranges!")

@@ -10,7 +10,7 @@ describe Message do
       # In the beginning our database is empty, so there are no links
       expect(Message.count).to eq(0)
       # this creates it in the database, so it's stored on the disk
-      Message.create(:content => "Hello, this is the first message")
+      Message.create(:content => "Hello, this is the first message", :user_id => 1)
       # We ask the database how many links we have, it should be 1
       expect(Message.count).to eq(1)
       # Let's get the first (and only) link from the database
