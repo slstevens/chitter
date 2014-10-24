@@ -4,6 +4,7 @@ env = ENV["RACK_ENV"] || "development"
 require_relative 'models/hashtag'
 require_relative 'models/message'
 require_relative 'models/user'
+require_relative 'models/reply'
 
 # we're telling datamapper to use a postgres database on localhost.
 # The name will be "bookmark_manager_test" or "bookmark_manager_development"

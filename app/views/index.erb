@@ -1,10 +1,23 @@
-<ul>
-	<% @messages.reverse.each do |message| %>
-		<% string = message.content %>
-		<li><%= string.gsub(/#\w+/) { |tag| link_to("/hashtags/%23#{tag.gsub(/^./, "")}", "#{tag}")} %>
-		</li>
-		<li><%= message.created_at.strftime("%d %b %y") %></li>
-	<% end %> 
-
-</ul>
+<div id='peeps-container'>
+	<ul>
+		<% @messages.reverse.each do |message| %>
+			<% string = message.content %>
+			<article id='peeps'>
+				<li><%= string.gsub(/#\w+/) { |tag| link_to("/hashtags/%23#{tag.gsub(/^./, "")}", "#{tag}")} %>
+				</li>
+				<li>Posted on <%= message.created_at.asctime %> by <%= message.user.username %></li>
+				<% if current_user %> 
+					<li><a href='/peeps/reply/<%= message.id %>'>Reply</a></li>
+				<% end %>	
+			</article>
+					<% message.replies.each do |reply| %>
+						<article id='reply'>
+							<p class='post_author'><%=h reply.user.username %> 
+							<p class='reply_main'><%=h reply.reply_content %></p>
+							<p class='post_footer'><%= reply.created_at.asctime %></p>
+						</article>
+					<% end %> 
+		<% end %> 
+	</ul>
+</div>
 

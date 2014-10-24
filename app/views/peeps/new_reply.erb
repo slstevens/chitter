@@ -1,0 +1,14 @@
+Original peep:
+
+<div class='peep'>
+<p class='reply_author'><%=h @message.user.username %> wrote:</p>
+<p class='reply_main'><%=h @message.content %></p>
+</div>
+<br>
+<div class='reply_box'>
+<form action='/peeps/reply/:id' method='post'>
+  <input type='text' placeholder='Reply to this peep' name='reply_content' id='reply_form'>
+  <input type='hidden' name='message_id' value='<%= @message.id %>'>
+  <input type='submit' value='Reply!' id='submit_button'>
+</form>
+</div>

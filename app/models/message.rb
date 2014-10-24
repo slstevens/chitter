@@ -9,6 +9,7 @@ class Message
 	property :created_at, 		DateTime
 
 	has n, :hashtags, :through => Resource
+	has n, :replies
  	belongs_to :user
 	# before :save, :link_hashtags
 

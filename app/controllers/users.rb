@@ -5,6 +5,7 @@ end
 
 post '/users' do
   	@user = User.create(:email => params[:email],
+                        :username => params[:username],
                        :password => params[:password],
                        :password_confirmation => params[:password_confirmation])
 	if @user.save

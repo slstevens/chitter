@@ -9,11 +9,13 @@ require_relative 'helpers/helpers'
 require_relative 'models/hashtag'
 require_relative 'models/message'
 require_relative 'models/user'
+require_relative 'models/reply'
 
 require_relative 'controllers/application'
 require_relative 'controllers/peeps'
 require_relative 'controllers/sessions'
 require_relative 'controllers/users'
+require_relative 'controllers/replies'
 
 enable :sessions
 set :session_secret, 'super secret'

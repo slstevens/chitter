@@ -1,13 +1,13 @@
 <header>
   <div id="logo">Chitter</div>
-  <div id="user-links">
+  <div id="user-peeps">
     <% if current_user %>
 
-        <h1>Welcome, <%= current_user.email %></h1>
+        <h1 id='welcome'>Welcome, <%= current_user.username %></h1>
        
         <form action="/sessions" method="post">
             <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="Sign out">
+            <input type="submit" class='button' value="Sign out">
         </form>
 
         <div id="new-message">
