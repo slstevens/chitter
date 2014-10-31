@@ -1,9 +1,12 @@
-<h3>Please sign up</h3>
-
-<form action="/users" method="post">
-	Email: <input name="email" type="text" value="<%= @user.email %>">
-	Username: <input name="username" type="text" value="<%= @user.username %>">
-	Password: <input name="password" type="password">
-	Confirm Password: <input name="password_confirmation" type="password">
-	<input type="submit" value="Sign up">
-</form>
+<section>
+	<article id="sign_in">
+		<h3>Please sign up</h3>
+		<form action="/users" method="post">
+			<p>Email: <input name="email" type="text" value="<%= @user.email %>"></p>
+			<p>Username: <input name="username" type="text" value="<%= @user.username %>"></p>
+			<p>Password: <input name="password" type="password"></p>
+			<p>Confirm Password: <input name="password_confirmation" type="password"></p>
+			<input type="submit" value="Sign up" class="button">
+		</form>
+	</article>
+</section>

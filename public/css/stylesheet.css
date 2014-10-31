@@ -1,9 +1,8 @@
 body {
   font-family: Helvetica, Arial, Sans-serif;
-  background-image: url(/images/extra_clean_paper.png)
 }
 
-a.button {
+.button {
   display: inline-block; /* display inline but have dimensions */
   width: 80px;
   background-color: #82B743;
@@ -18,7 +17,7 @@ a.button {
   text-shadow: 0 0 2px rgba(0,0,0, 0.4); /*for readability*/
 }
 
-a.button.highlighted {
+.button.highlighted {
   background-color: #b77843;
 }
 
@@ -32,7 +31,9 @@ header {
 
 #peeps-container {
   background-color: white;
-  margin: 40px;
+  margin-top: 15%;
+  margin-right: 10%;
+  margin-left: 10%;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   padding: 10px;
 }
@@ -44,20 +45,68 @@ header {
   padding: 15px 10px;
 }
 
-#welcome {
-  
+
+#reply {
+    background-color: #F3F9FF;
+    margin: 1%;
+    padding-top: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    width: 75%;
+    position: relative;
+    left: 20%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
-  /* every immediate child to be vertically centered */
-  header > * {
-    margin: auto 0;
-  }
-  header #logo {    
-    display: flex;      
-  }
+article#sign_in {
+  margin-right: auto;
+  margin-left: auto;
+  width: 30%;
+  background-color: rgba(186, 186, 186, 0.38);
+  padding: 3%;
+  margin-top: 5%;
+}
 
-  header #user-peeps {
-    flex: 1; /* http://learnlayout.com/flexbox.html */
-    -webkit-flex: 1;
-    text-align: right;  
-  }
+h3 {
+  font-size: 2em;
+  line-height: 2em;
+}
+
+input {
+  position: relative;
+  line-height: 30px;
+  width: 80%;
+  margin-right: 40%;
+}
+
+#welcome {
+  margin-top: 30%;
+  color: black;
+  font-size: 2em;
+}
+
+form {
+  line-height: 2em;
+  position: relative;
+}
+
+#errors {
+  text-align: center;
+  color: red;
+  line-height: 2em;
+  margin-top: 5%;
+}
+
+div#logo {
+  font-size: 2em;
+  margin-right: 30%
+}
+
+div#user-welcome {
+  /*position: absolute;*/
+  /*width: 100%;*/
+  /*float: left;*/
+  display: inline-block;
+}
+
